@@ -9,14 +9,14 @@ const BookDetails = () => {
   const { books } = useContext(BookContext);
   const { addToCart } = useContext(CartContext);
 
-  const book = books.find((book) => {
+  const bookFound = books.find((book) => {
     return book.id === id;
   });
-  if (!book) {
+  if (!bookFound) {
     return <h3>Loading...</h3>;
   }
 
-  const { image: url, title, description, author, price } = book;
+  const { image: url, title, description, author, price } = bookFound;
 
   return (
     <section className="book-details">
@@ -31,7 +31,7 @@ const BookDetails = () => {
         <button
           className="btn"
           onClick={() => {
-            addToCart({ ...book, id });
+            addToCart({ ...bookFound, id });
             history.push("/cart");
           }}
         >
