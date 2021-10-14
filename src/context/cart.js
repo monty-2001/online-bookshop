@@ -39,6 +39,7 @@ const CartProvider = ({ children }) => {
       increaseAmount(id);
     } else {
       const cartItems = [...cart, { id, title, image, price, amount: 1 }];
+      console.log(cartItems);
       setCart(cartItems);
     }
   };
@@ -49,7 +50,14 @@ const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, total, addToCart, increaseAmount, decreaseAmount, clearCart }}
+      value={{
+        cart,
+        total,
+        addToCart,
+        increaseAmount,
+        decreaseAmount,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
