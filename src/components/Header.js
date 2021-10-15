@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <header className="main-head">
       <nav>
-        <h1 id="logo">E-COMMERCE</h1>
+        <h1 id="logo">
+          <Link to="/">E-COMMERCE</Link>
+        </h1>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -15,9 +17,6 @@ const Header = () => {
           </li>
           <li>
             <Link to="/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/checkout">Checkout</Link>
           </li>
         </ul>
       </nav>

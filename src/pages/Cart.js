@@ -6,10 +6,11 @@ import { useHistory } from "react-router-dom";
 
 const Cart = () => {
   const history = useHistory();
-  const { cart, total, increaseAmount, decreaseAmount } = useContext(CartContext);
+  const { cart, total, increaseAmount, decreaseAmount } =
+    useContext(CartContext);
 
   if (!cart.length) {
-    return <h3>Empty Cart</h3>
+    return <h3>Empty Cart</h3>;
   }
   return (
     <section className="cart">
@@ -27,9 +28,13 @@ const Cart = () => {
               <p>$ {price}</p>
             </div>
             <div className="amount">
-              <button onClick={() => increaseAmount(id)}><FiChevronUp /></button>
+              <button onClick={() => increaseAmount(id)}>
+                <FiChevronUp />
+              </button>
               <p>{amount}</p>
-              <button onClick={() => decreaseAmount(id, amount)}><FiChevronDown /></button>
+              <button onClick={() => decreaseAmount(id, amount)}>
+                <FiChevronDown />
+              </button>
             </div>
           </article>
         ))}
@@ -38,7 +43,16 @@ const Cart = () => {
         <h3>Total: $ {total}</h3>
       </div>
       <div>
-        <button className="btn" onClick={() => history.push("/checkout")}>Checkout</button>
+        <button
+          className="btn"
+          onClick={() => {
+            console.log(cart.splice(0, cart.length));
+            alert("Order successful");
+            history.push("/");
+          }}
+        >
+          Checkout
+        </button>
       </div>
     </section>
   );
