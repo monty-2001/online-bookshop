@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { listBooks } from "../api/queries";
-import { processOrder } from "../api/mutations";
 
 const BookContext = React.createContext();
 
 const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [featured, setFeatured] = useState([]);
-  const [bookImages, setBookImages] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -33,8 +30,6 @@ const BookProvider = ({ children }) => {
       setLoading(true);
       axios.get(`http://localhost:3200/images`).then((res) => {
         const bookImagesData = res.data;
-        console.log(bookImagesData);
-        setBookImages(bookImagesData);
 
         const books = [
           {

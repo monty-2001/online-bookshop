@@ -7,7 +7,19 @@ import { BookContext } from "../context/books";
 const Home = () => {
   const { featured } = useContext(BookContext);
   if (!featured.length) {
-    return <h3>No Featured Books</h3>;
+    return (
+      <>
+        <Hero />
+        <section className="featured">
+          <header className="featured-head">
+            <h3>Featured Collection</h3>
+          </header>
+          <div className="books featured-list">
+            <div className="loader"></div>
+          </div>
+        </section>
+      </>
+    );
   }
   return (
     <>
@@ -34,4 +46,3 @@ const Home = () => {
 };
 
 export default Home;
-
