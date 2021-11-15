@@ -86,7 +86,7 @@ nav ul {
 
 #logo {
   flex: 2 1 40rem;
-  font-family: "Pattaya", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -373,3 +373,10 @@ nav ul {
   }
 }
 
+.astext {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+}
