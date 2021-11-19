@@ -47,7 +47,7 @@ const Cart = () => {
           className="btn"
           onClick={() => {
             console.log(cart.splice(0, cart.length));
-            alert("Order successful, the total is "+total);
+            alert("Order successful, The total is "+total);
             history.push("/");
           }}
         >
